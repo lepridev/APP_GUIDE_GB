@@ -105,7 +105,12 @@ const ListeDesEnregistrements = (props: Props) => {
                     >
                       Réattribuer
                     </Link>
-
+                    <Link
+                      href={`/enregistrement/update/${item._id}`}
+                      className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                      Modifier
+                    </Link>
                     <Link
                       href={`/recaps/${item._id}`}
                       className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
