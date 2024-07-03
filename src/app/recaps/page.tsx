@@ -11,6 +11,10 @@ const ListeDesEnregistrements = (props: Props) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    getAllData();
+  }, []);
+
   const getAllData = async () => {
     setLoading(true);
     try {
@@ -25,10 +29,6 @@ const ListeDesEnregistrements = (props: Props) => {
       setLoading(false);
     }
   };
-
-  useEffect(() => {
-    getAllData();
-  }, []);
 
   return (
     <div className="p-3 md:p-7">

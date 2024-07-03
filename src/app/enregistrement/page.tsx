@@ -55,7 +55,7 @@ const CreateEnregistrement = (props: Props) => {
     try {
       const res = await axios.post("/api/add/create", enregistrement);
       if (res.data?.success === true) {
-        router.push("/guide");
+        router.push("/recaps");
       }
     } catch (error) {}
   };
