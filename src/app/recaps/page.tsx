@@ -21,10 +21,10 @@ const ListeDesEnregistrements = (props: Props) => {
       const res = await axios.get("/api/search");
       if (res) {
         setData(res.data?.data);
-        console.log(res.data?.data);
+        console.log("Data fetched:", res.data?.data);
       }
     } catch (error) {
-      console.log(error);
+      console.log("Error fetching data:", error);
     } finally {
       setLoading(false);
     }
@@ -90,8 +90,7 @@ const ListeDesEnregistrements = (props: Props) => {
                     {item.reference}
                   </th>
                   <td className="px-6 py-4">
-                    {" "}
-                    {`${item.name} ${" "}${item.lastname}`}
+                    {`${item.name} ${item.lastname}`}
                   </td>
                   <td className="px-6 py-4">{item.lotissement}</td>
                   <td className="px-6 py-4">{item.ilot}</td>
