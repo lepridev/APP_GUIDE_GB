@@ -18,7 +18,9 @@ const ListeDesEnregistrements = (props: Props) => {
   const getAllData = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("/api/search");
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/search`
+      );
       if (res) {
         setData(res.data?.data);
         console.log("Data fetched:", res.data?.data);
