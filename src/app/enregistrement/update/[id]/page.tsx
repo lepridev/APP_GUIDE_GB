@@ -117,7 +117,10 @@ const UpdateEnregistrement = ({ params }: any) => {
     console.log("dataTosend", dataTosend);
 
     try {
-      const res = await axios.post("/api/add/modifier", dataTosend);
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/add/update`,
+        dataTosend
+      );
       if (res) {
         getAllData();
         router.push("/recaps");
@@ -130,7 +133,10 @@ const UpdateEnregistrement = ({ params }: any) => {
 
   const getDataByID = async () => {
     try {
-      const res = await axios.post("/api/search/id", { id: id });
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/search/id`,
+        { id: id }
+      );
       if (res.data) {
         console.log("res.data.data", res.data.data);
         setDistantData(res.data.data);
