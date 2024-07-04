@@ -95,7 +95,10 @@ const EditEnregistrement = ({ params }: any) => {
     console.log("dataTosend", dataTosend);
 
     try {
-      const res = await axios.post("/api/add/edit", dataTosend);
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/add/edit`,
+        dataTosend
+      );
       if (res) {
         router.push("/recaps");
         console.log(res);

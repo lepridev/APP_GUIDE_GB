@@ -33,7 +33,11 @@ const EnregistrementsParNom = (props: Props) => {
 
     try {
       setLoading(true); // Début du chargement
-      const res = await axios.post("/api/search/lot", { ilot, lot });
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/search/lot`,
+        { ilot, lot }
+      );
+
       if (res.data) {
         setData(res.data?.data);
       }

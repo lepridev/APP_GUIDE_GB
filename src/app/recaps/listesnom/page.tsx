@@ -27,7 +27,10 @@ const EnregistrementsParNom = (props: Props) => {
     setLoading(true);
     e.preventDefault();
     try {
-      const res = await axios.post("/api/search/name", { name });
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/search/name`,
+        { name }
+      );
       if (res.data) {
         setData(res.data?.data);
       }

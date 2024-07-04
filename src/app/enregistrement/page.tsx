@@ -52,8 +52,12 @@ const CreateEnregistrement = (props: Props) => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     console.log(enregistrement);
+
     try {
-      const res = await axios.post("/api/add/create", enregistrement);
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/add/create`,
+        enregistrement
+      );
       if (res.data?.success === true) {
         router.push("/recaps");
       }

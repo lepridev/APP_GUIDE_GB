@@ -37,7 +37,10 @@ const RecapitulatifEnregistrement = ({ params }: any) => {
   const getRecapByID = async () => {
     try {
       setLoading(true); // Commence le chargement
-      const res = await axios.post("/api/search/id", { id: id });
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/search/id`,
+        { id: id }
+      );
       if (res.data) {
         setData(res.data?.data);
       }
